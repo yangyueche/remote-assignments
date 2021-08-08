@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  
+}
+
+li, a, button{
+  font-family:"Montserrat", sans-serif;
+  font-weight: 500;
+  font-size:16px;
+  color:#151f22;
+  text-decoration: none;
+}
+header{ 
+  display:flex;
+  justify-content: flex-end;
+  align-items:center;
+  padding:30px 10%;
+  background-color : #EEEDE7;
+  text-align: center;
+  margin: 0;
+	padding: 30px;
+	border: 0;
+}
+
+.logo{
+  cursor:pointer;
+  margin-right:auto;
+  border-radius:50%;
+  max-height: 3em;
+  max-width: 3em;
+}
+.nav_links{
+  list-style:none;
+}
+.nav_links li{
+  display:inline-block;
+  padding:0px 20px;
+}
+
+.nav_links li a{
+  transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover{
+  color:#0088a9;
+}
+button{
+  padding:25px 25px;
+  
+  background-color:rgba(0,136,169,1);
+  border:none;
+  border-radius:50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+button:hover{
+  background-color:rgba(0,136,169,0.8);
+}
+
+.MainHeader{
+  background-color: teal;
+  padding:3%;
+  text-align: center;
+}
+.Section-Title {
+  text-align:center;
+  padding:1.5%;
+}
+
+.ServiceBoxes{
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+
+}
+.ServiceBox{
+  display: block;
+  background-color: yellowgreen;
+  flex-basis:40rem;
+  margin:1% 1%;
+  padding:3%;
+  text-align: center;
+}
+footer{
+
+}
+
+@media (min-width: 1200px) {
+
+  body {
+
+  max-width:1200px;
+
+  }
+} 
+
+body {
+  line-height: 1.6;
+}
+img {
+  width: 10%;
+  height: auto;
+}
+
+footer {
+  display:flex;
+  
+  justify-content:center;
+  color:blue;
+  width:15%;
+  margin: 3% auto;
+}
+/* flex-wrap property */
