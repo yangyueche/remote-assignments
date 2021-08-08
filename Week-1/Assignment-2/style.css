@@ -86,15 +86,13 @@ button:hover{
   padding:3%;
   text-align: center;
 }
-footer{
 
-}
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px){
 
-  body {
-
-  max-width:1200px;
+  .ServiceBoxe {
+    
+    width:1200px;
 
   }
 } 
