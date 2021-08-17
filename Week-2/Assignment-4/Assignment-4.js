@@ -6,18 +6,19 @@ myHeading.addEventListener('click', () => {
   myHeading.textContent = 'Have a Good Time!';
 
 });
-
+var boxesContainer = document.querySelector('.ServiceBoxes2');
+boxesContainer.style.visibility = 'hidden';
 btnToggle.addEventListener('click', () => {
-  var boxesContainer = document.querySelector('.ServiceBoxes2');
+
   var compStyle = getComputedStyle(boxesContainer);
 
-  if (boxesContainer.style.display === 'none') {
+  if (boxesContainer.style.visibility === 'hidden') {
     btnToggle.textContent = 'Hide List';
-    boxesContainer.removeAttribute('style');
+    boxesContainer.style.visibility = 'visible';
 
   } else {
     btnToggle.textContent = 'Show More';
-    boxesContainer.style.display = 'none';
+    boxesContainer.style.visibility = 'hidden';
 
   }
 });
