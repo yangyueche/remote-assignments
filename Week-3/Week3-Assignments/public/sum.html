@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Sum the Number</title>
+  <script>
+    function countSum(sumNum) {
+      var req = new XMLHttpRequest();
+      req.open("get", "http://localhost:3000/data?number=" + sumNum);
+      req.onload = function () {
+        var content = document.getElementById("countedSum");
+        content.innerHTML = this.responseText;
+
+      };
+      req.send();
+    }
+
+
+
+  </script>
+</head>
+
+<body>
+
+  <h1>Welcome to count your SUM!</h1>
+
+  <div>
+    <form>
+      <!-- onsubmit="event.preventDefault();" -->
+      Number you want to SUM?<br>
+      <input type="number" name="number" id="userInput"> <br><br>
+      <input onclick="countSum(document.getElementById('userInput').value);" type="button" value="送出">
+    </form>
+
+  </div>
+  <div id="countedSum">
+
+  </div>
+
+</body>
+
+</html>
