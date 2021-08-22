@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    vertical-align: center;
+    justify-content: space-around;
+}
+     

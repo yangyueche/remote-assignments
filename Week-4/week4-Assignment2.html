@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ajax and</title>
+</head>
+
+<body>
+  <script>
+    function ajax(src, callback) {
+      const req = new XMLHttpRequest();
+      req.open('get', src);
+      req.onreadystatechange = function () {
+        if (req.readyState === 4) {
+          const data = JSON.parse(req.responseText);
+          callback(data);
+        }
+      };
+      req.send();
+    }
+
+    function render(data) {
+      // your code here.
+      // document.createElement() and appendChild() methods are preferred.
+      let body = document.querySelector('body');
+      let title = document.createElement('div');
+      title.innerHTML = `<h1>Google Product Release!`;
+      body.appendChild(title);
+      for (i = 0; i < data.length; i++) {
+        let productInfo = document.createElement('div');
+        productInfo.innerHTML = `<h3><u>${data[i].name}</u></h1><p>${data[i].price}</p><p>${data[i].description}</p>`
+        body.appendChild(productInfo)
+      }
+    }
+
+    ajax("http://13.230.176.178:4000/api/1.0/remote-w4-data", function (response) {
+      render(response);
+    }); // you should get product information in JSON format and render data in the page
+  </script>
+</body>
+
+</html>
