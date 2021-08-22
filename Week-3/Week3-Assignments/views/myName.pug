@@ -1,3 +1,4 @@
+  
 doctype html
 html(lang="en")
   head
@@ -6,7 +7,7 @@ html(lang="en")
     if name 
       h2 Welcome, #{name}!
     else
-      form(action='/myName', method='get')
+      form(action='/trackName', method='get')
         label Enter your name here <br>
           input(type='text', name='username')
         button(type='submit') Submit

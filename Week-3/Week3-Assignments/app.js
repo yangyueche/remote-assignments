@@ -1,5 +1,6 @@
 const express = require('express');//express 套件載入到程式中
 const cookieParser = require('cookie-parser');
+const { render } = require('pug');
 
 const app = express();//產生 Express Application 物件
 
@@ -45,17 +46,15 @@ app.get('/sum.html', (req, res) => {
 
 //<Assignment 4>
 app.get('/myName', (req, res) => {
-  if (req.cookies.username) {
-    res.render('myName', { name: req.cookies.username });
-  } else {
-    if (req.query.username) {
-      res.cookie('username', req.query.username);
-      res.redirect('/myName');
-      //為什麼不能用 res.render('myName', { name: req.cookies.username });
-    } else {
-      res.render('myName');
-    }
-  }
-})
+  res.render('myName', { name: req.cookies.username });
+
+});
+
+app.get('/trackName', (req, res) => {
+  res.cookie('username', req.query.username);
+  res.redirect('/myName');
+}
+  // 為什麼不能用 res.render('myName', { name: req.cookies.username });
+);
 
 app.listen(3000);
